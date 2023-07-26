@@ -31,6 +31,7 @@ window._rundeck.eventBus.on('ko-exec-show-output', (nodeStep: any) => {
         :showSettings="false"
         ref="viewer"
         :config="config"
+        :root-store="rootStore"
     />
     `
 
@@ -40,6 +41,11 @@ window._rundeck.eventBus.on('ko-exec-show-output', (nodeStep: any) => {
         template: template,
         provide: {
             rootStore
+        },
+        data() {
+            return {
+                rootStore
+            }
         },
         props: {
             config: {default: () => ({
