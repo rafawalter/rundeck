@@ -91,7 +91,7 @@ executors:
         default: --no-daemon --max-workers 2 -x check publishToMavenLocal --stacktrace --info --parallel
 
     docker:
-      - image: rundeck/ci@sha256:ef1db4074daaea2882aaaea390604cb92488289549207211d3ef7cbbaedcdf65
+      - image: debian:stable-slim
 
     resource_class: << parameters.resourceClass >>
 
