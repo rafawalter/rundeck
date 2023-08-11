@@ -20,6 +20,8 @@ main() {
 }
 
 build() {
+    echo "JAVA_HOME=${JAVA_HOME}"
+    java -version
     ./gradlew -Penvironment="${ENV}" -x check publishToMavenLocal ${RUNDECK_GRADLE_OPTS:-}
     ./gradlew -Penvironment="${ENV}" -x check bootWar ${RUNDECK_GRADLE_OPTS:-}
     groovy testbuild.groovy --buildType="${ENV}"
