@@ -330,6 +330,7 @@ jobs:
       - run:
           name: Build
           command: |
+            env
             source .circleci/circle-shim.sh
             bash scripts/circle-build.sh build
       - run:
